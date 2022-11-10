@@ -383,14 +383,7 @@ namespace Course_cs
 
         }
         public static bool dr = false;
-        private void Re_Click(object sender, EventArgs e)
-        {
-          
-                graph.clearPic();
-                graph.drawFullGraph(VertexList, EdgeList);
-                pic.Image = graph.GetBitmap();
-          
-        }
+      
         private void Info_Click(object sender, EventArgs e)
         {
 

@@ -47,7 +47,7 @@ namespace Course_cs
        Brush st = Brushes.BurlyWood;
         PointF point;
             public int R = 40; 
-Pen[] PenColor;
+
     
         public DrawGraph(int width, int height)
         {
@@ -63,32 +63,7 @@ Pen[] PenColor;
             fo = new Font("Comic Sans MS", 9);
             EndvPen = new Pen(Color.Chocolate, 4);
            
-          PenColor = new Pen[]
-            {
-            new Pen( Color.Violet,4),
-            new Pen(Color.Plum, 4),
-             new Pen(Color.Bisque, 4),
-            new Pen(Color.Aquamarine, 4),
-             new Pen(Color.HotPink, 4),
-            new Pen(Color.DeepPink, 4),
-          new Pen(Color.PeachPuff,4),
-           new Pen(Color.Purple, 4),
-           new Pen(Color.SpringGreen, 4),
-             new Pen(Color.Green, 4),
-           new Pen(Color.Red, 4),
-            new Pen(Color.DarkCyan, 4),
-            new Pen(Color.Gold, 4),
-          new Pen(Color.Salmon, 4)   ,
-            new Pen(Color.SeaGreen, 4),
-            new Pen(Color.SteelBlue, 4),
-            new Pen(Color.Sienna, 4),
-            new Pen(Color.Khaki, 4),
-            new Pen(Color.BlueViolet, 4),
-            new Pen(Color.Thistle, 4),
-            new Pen(Color.Moccasin, 4),
-            new Pen(Color.Olive, 4),
-            new Pen(Color.Orange,4)
-        };
+        
         }
     
             public Bitmap GetBitmap()
@@ -105,8 +80,7 @@ Pen[] PenColor;
         {
             clearPic();
             Random rnd = new Random();
-            Pen pen = PenColor[rnd.Next(PenColor.Length)];
-         
+            Pen pen = new Pen(Color.DarkGray);
             for (int i = 0; i < EdgeList.Count; i++)
             {
                 if  (EdgeList[i].VStart == EdgeList[i].VEnd)
@@ -148,32 +122,8 @@ Pen[] PenColor;
         }
         public void drawVertex(Pen p, int x, int y, string number)
         {
-            Brush bru = default;
+            Brush bru = Brushes.DarkGray; ;
 
-         if (p.Color == Color.Violet) { bru = Brushes.Violet; }
-         else if (p.Color == Color.Plum) { bru = Brushes.Plum; }
-         else if (p.Color == Color.Bisque) { bru = Brushes.Bisque; }
-         else if (p.Color == Color.Aquamarine) { bru = Brushes.Aquamarine; }
-         else if (p.Color == Color.HotPink) { bru = Brushes.HotPink; }
-         else if (p.Color == Color.DeepPink) { bru = Brushes.DeepPink; }
-         else if (p.Color == Color.PeachPuff) { bru = Brushes.PeachPuff; }
-         else if (p.Color == Color.Purple) { bru = Brushes.Purple; }
-         else if (p.Color == Color.SpringGreen) { bru = Brushes.SpringGreen; }
-         else if (p.Color == Color.Green) { bru = Brushes.Green; }
-         else if (p.Color == Color.Red) { bru = Brushes.Red; }
-         else if (p.Color == Color.DarkCyan) { bru = Brushes.DarkCyan; }
-         else if (p.Color == Color.Gold) { bru = Brushes.Gold; }
-         else if (p.Color == Color.Salmon) { bru = Brushes.Salmon; }
-         else if (p.Color == Color.SeaGreen) { bru = Brushes.SeaGreen; }
-         else if (p.Color == Color.SteelBlue) { bru = Brushes.SteelBlue; }
-         else if (p.Color == Color.Sienna) { bru = Brushes.Sienna; }
-         else if (p.Color == Color.Khaki) { bru = Brushes.Khaki; }
-         else if (p.Color == Color.BlueViolet) { bru = Brushes.BlueViolet; }
-         else if (p.Color == Color.Thistle) { bru = Brushes.Thistle; }
-         else if (p.Color == Color.Moccasin) { bru = Brushes.Moccasin; }
-         else if (p.Color == Color.Olive) { bru = Brushes.Olive; }
-         else if (p.Color == Color.Orange) { bru = Brushes.Orange; }
-         else { bru = Brushes.IndianRed; p.Color = Color.IndianRed; }
                 
             
                 gr.FillEllipse(bru, (x - 9), (y - 9), R / 2, R / 2);
